@@ -8,7 +8,7 @@ const Raid = require("../models/Raid");
 router.get("/", async (req, res) => {
     try {
         const raids = await Raid.find()
-            .populate("raidDefinition");
+            .populate("raidDefinition").populate("assignedRaiders");
 
         res.json(raids);
     } catch (error) {
