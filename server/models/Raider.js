@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const raiderSchema = new mongoose.Schema({
-    name: {
+    characterName: {
         type: String,
         required: true,
         unique: true
@@ -15,10 +15,22 @@ const raiderSchema = new mongoose.Schema({
     spec: {
         type: String
     },
-
+    level: {
+        type: Number,
+        required: true,
+    },
+    discordName: {
+        type: String,
+        required: true,
+        unique: true
+    },
     role: {
         type: String,
         enum: ["Tank", "Healer", "DPS"]
+    },
+    isActive: {
+        type: Boolean,
+        default: true
     }
 });
 

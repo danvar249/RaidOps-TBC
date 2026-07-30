@@ -28,3 +28,7 @@ app.use("/api/raid-definitions", raidDefinitionRoutes);
 const raidRoutes = require("./routes/raidRoutes");
 
 app.use("/api/raids", raidRoutes);
+
+const raiderRoutes = require("./routes/raiderRoutes");
+
+app.use("/api/raider", raiderRoutes);
